@@ -22,6 +22,17 @@ Voice+
 VoiceDialer
 VoicePlus
 WhisperPush
+Email
+Exchange
+HoloSpiral
+LivePicker
+MagicSmoke
+MusicVisualization
+NoiseField
+PhotoPhase
+PhotoTable
+WebView
+SetupWizard
 EOF
 }
 
