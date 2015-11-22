@@ -17,7 +17,6 @@ CMAccount
 CMS
 CMSetupWizard
 CyanogenSetupWizard
-LockClock
 Voice+
 VoiceDialer
 VoicePlus
