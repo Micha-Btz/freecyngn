@@ -13,6 +13,9 @@ deleteApk() {
 
 del_files() {
 cat <<EOF
+BasicDreams
+Browser
+CaptivePortalLogin
 CMAccount
 CMS
 CMSetupWizard
@@ -22,7 +25,7 @@ VoiceDialer
 VoicePlus
 WhisperPush
 Email
-Exchange
+Exchange2
 HoloSpiral
 LivePicker
 MagicSmoke
