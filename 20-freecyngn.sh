@@ -13,6 +13,10 @@ deleteApk() {
 
 del_files() {
 cat <<EOF
+HoloSpiralWallpaper
+LiveWallpapers*
+PhaseBeam
+VisualizationWallpapers
 BasicDreams
 Browser
 CaptivePortalLogin
