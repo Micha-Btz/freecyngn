@@ -47,3 +47,5 @@ if [[ "$1" == "post-restore" ]] || [[ "$1" == "" ]]; then
         deleteApk "$FILE"
     done
 fi
+
+settings put global captive_portal_detection_enabled 0
