@@ -11,35 +11,36 @@ deleteApk() {
 
 del_files() {
 cat <<EOF
-HoloSpiralWallpaper
-LiveWallpapers
-LiveWallpapersPicker
-PhaseBeam
-VisualizationWallpapers
 BasicDreams
 Browser
 CaptivePortalLogin
 CMAccount
+CMFileManager
 CMS
 CMSetupWizard
+CMUpdater
 CyanogenSetupWizard
-Voice+
-VoiceDialer
-VoicePlus
-WhisperPush
 Email
 Exchange2
 HoloSpiral
+HoloSpiralWallpaper
 LivePicker
+LiveWallpapers
+LiveWallpapersPicker
 MagicSmoke
 MusicVisualization
 NoiseField
+PhaseBeam
 PhotoPhase
 PhotoTable
-WebView
 SetupWizard
-CyanogenSetupWizard
 TimeService
+VisualizationWallpapers
+Voice+
+VoiceDialer
+VoicePlus
+WebView
+WhisperPush
 EOF
 }
 
@@ -49,7 +50,18 @@ if [[ "$1" == "post-restore" ]] || [[ "$1" == "" ]]; then
     done
 fi
 
-settings put global captive_portal_detection_enabled 0
+#set captive_portal_detection_enabled 0
+
+TEST=`settings get global captive_portal_detection_enabled`
+if [ "$TEST" -eq "0" ];
+    then
+    echo variable is set to zero
+    else 
+     settings put global captive_portal_detection_enabled 0
+fi
+
+
+
 =======
 # Needed due to the removal of CyanogenSetupWizard.
 # Without, the home button and quick settings are broken.
