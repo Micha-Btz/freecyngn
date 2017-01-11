@@ -2,12 +2,38 @@
 A small tool to remove some proprietary parts from CyanogenMod.
 
 freecyngn removes the following components which either contain or require
-proprietary components of Google:
+proprietary components of Google and which i personally don't like:
 
-- Browser (Gello)
-- CyanogenSetupWizard
-- LockClock
-- TimeService
+-BasicDreams
+-Browser
+-CaptivePortalLogin
+-CMAccount
+-CMFileManager
+-CMS
+-CMSetupWizard
+-CMUpdater
+-CyanogenSetupWizard
+-Email
+-Exchange2
+-HoloSpiral
+-HoloSpiralWallpaper
+-LivePicker
+-LiveWallpapers
+-LiveWallpapersPicker
+-MagicSmoke
+-MusicVisualization
+-NoiseField
+-PhaseBeam
+-PhotoPhase
+-PhotoTable
+-SetupWizard
+-TimeService
+-VisualizationWallpapers
+-Voice+
+-VoiceDialer
+-VoicePlus
+-WebView
+-WhisperPush
 
 
 ## Usage
