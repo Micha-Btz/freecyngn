@@ -68,3 +68,8 @@ fi
 # Needed due to the removal of CyanogenSetupWizard.
 # Without, the home button and quick settings are broken.
 /system/xbin/sqlite3 /data/user_de/0/org.cyanogenmod.cmsettings/databases/cmsettings.db "update secure set value = 1 where name = 'cm_setup_wizard_completed';"
+
+# remove guest user
+cp /system/build.prop /system/build.prop.old
+echo fw.max_users=1 >> /system/build.prop
+/system/xbin/sqlite3 /data/data/com.android.providers.settings/databases/settings.db "update secure set value = 0 where name = 'guest_user_enabled';"
