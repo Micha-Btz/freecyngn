@@ -13,6 +13,7 @@ del_files() {
 cat <<EOF
 BasicDreams
 Browser
+privacy-browser
 CaptivePortalLogin
 CMAccount
 CMFileManager
@@ -51,25 +52,14 @@ if [[ "$1" == "post-restore" ]] || [[ "$1" == "" ]]; then
 fi
 
 #set captive_portal_detection_enabled 0
-
-TEST=`settings get global captive_portal_detection_enabled`
-if [ "$TEST" -eq "0" ];
-    then
-    echo variable is set to zero
-    else 
-     settings put global captive_portal_detection_enabled 0
-     settings put global captive_portal_server localhost
-     settings put global captive_portal_mode 0
-fi
-
-
-
-=======
-# Needed due to the removal of CyanogenSetupWizard.
-# Without, the home button and quick settings are broken.
-/system/xbin/sqlite3 /data/user_de/0/org.cyanogenmod.cmsettings/databases/cmsettings.db "update secure set value = 1 where name = 'cm_setup_wizard_completed';"
+settings put global captive_portal_detection_enabled 0
+settings put global captive_portal_server localhost
+settings put global captive_portal_mode 0
 
 # remove guest user
+settings put global guest_user_enabled 0
 cp /system/build.prop /system/build.prop.old
-echo fw.max_users=1 >> /system/build.prop
-/system/xbin/sqlite3 /data/data/com.android.providers.settings/databases/settings.db "update secure set value = 0 where name = 'guest_user_enabled';"
+echo "fw.max_users=1" >> /system/build.prop
+echo "fw.show_multiuserui=0" >> /system/build.prop
+
+/system/xbin/sqlite3 /data/data/com.android.providers.settings/databases/settings.db "UPDATE `global` SET `value`=0 WHERE `_rowid_`='7721';"
