@@ -58,8 +58,11 @@ settings put global captive_portal_mode 0
 
 # remove guest user
 settings put global guest_user_enabled 0
+mount -o rw,remount,rw /system
 cp /system/build.prop /system/build.prop.old
 echo "fw.max_users=1" >> /system/build.prop
 echo "fw.show_multiuserui=0" >> /system/build.prop
+mount -o ro,remount,ro /system
 
-/system/xbin/sqlite3 /data/data/com.android.providers.settings/databases/settings.db "UPDATE `global` SET `value`=0 WHERE `_rowid_`='7721';"
+#doesn't work
+#/system/xbin/sqlite3 /data/data/com.android.providers.settings/databases/settings.db "UPDATE `global` SET `value`=0 WHERE `_rowid_`='7721';"
