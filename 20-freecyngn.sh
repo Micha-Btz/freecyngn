@@ -65,4 +65,4 @@ echo "fw.show_multiuserui=0" >> /system/build.prop
 mount -o ro,remount,ro /system
 
 #doesn't work
-#/system/xbin/sqlite3 /data/data/com.android.providers.settings/databases/settings.db "UPDATE `global` SET `value`=0 WHERE `_rowid_`='7721';"
+/system/xbin/sqlite3 /data/data/com.android.providers.settings/databases/settings.db SELECT COUNT(*) FROM global WHERE name = 'guest_user_enabled';"
