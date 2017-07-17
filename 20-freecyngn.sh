@@ -56,7 +56,7 @@ settings put global captive_portal_detection_enabled 0
 settings put global captive_portal_server localhost
 settings put global captive_portal_mode 0
 
-# remove guest user
+# remove guest user - make sure you deleted all guest user before
 settings put global guest_user_enabled 0
 mount -o rw,remount,rw /system
 cp /system/build.prop /system/build.prop.old
@@ -64,5 +64,3 @@ echo "fw.max_users=1" >> /system/build.prop
 echo "fw.show_multiuserui=0" >> /system/build.prop
 mount -o ro,remount,ro /system
 
-#doesn't work
-#/system/xbin/sqlite3 /data/data/com.android.providers.settings/databases/settings.db SELECT COUNT(*) FROM global WHERE name = 'guest_user_enabled';"
