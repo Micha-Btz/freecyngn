@@ -18,6 +18,7 @@ CMAccount
 CMFileManager
 CMS
 CMSetupWizard
+CMWallpapers
 CyanogenSetupWizard
 Email
 Exchange2
@@ -38,7 +39,6 @@ VisualizationWallpapers
 Voice+
 VoiceDialer
 VoicePlus
-WebView
 EOF
 }
 
