@@ -12,6 +12,7 @@ deleteApk() {
 del_files() {
 cat <<EOF
 BasicDreams
+Browser
 privacy-browser
 CaptivePortalLogin
 CMAccount
@@ -39,15 +40,15 @@ VisualizationWallpapers
 Voice+
 VoiceDialer
 VoicePlus
+WebView
 EOF
 }
 
-if [ "$1" = "post-restore" ] || [ "$1" = "" ]; then
-    del_files | while read -r FILE; do
+if [[ "$1" == "post-restore" ]] || [[ "$1" == "" ]]; then
+    del_files | while read FILE; do
         deleteApk "$FILE"
     done
 fi
-
 
 #set captive_portal_detection_enabled 0
 settings put global captive_portal_detection_enabled 0
