@@ -40,7 +40,6 @@ VisualizationWallpapers
 Voice+
 VoiceDialer
 VoicePlus
-WebView
 EOF
 }
 
