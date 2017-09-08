@@ -39,6 +39,16 @@ if [[ "$1" == "post-restore" ]] || [[ "$1" == "" ]]; then
 fi
 
 # remove guest user - make sure you deleted all guest user before
-cp /system/build.prop /system/build.prop.old
-echo "fw.max_users=1" >> /system/build.prop
-echo "fw.show_multiuserui=0" >> /system/build.prop
+# Proceed only if /system is the expected major and minor version
+
+if [ ! -r /system/build.prop ]; then
+    exit 1
+fi
+if ( ! grep -q "fw.max_users=1" /system/build.prop ); then
+  echo "max users already set"
+            exit 1
+    else
+    cp /system/build.prop /system/build.prop.old
+    echo "fw.max_users=1" >> /system/build.prop
+    echo "fw.show_multiuserui=0" >> /system/build.prop
+fi
