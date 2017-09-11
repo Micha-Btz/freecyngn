@@ -1,5 +1,4 @@
 #!/sbin/sh
-set -x
 # /system/addon.d/20-freecyngn.sh
 # During a CyanogenMod upgrade this script repatches CyanogenMod
 # using the freecyngn patchset.
@@ -38,7 +37,7 @@ if [[ "$1" == "post-restore" ]] || [[ "$1" == "" ]]; then
 fi
 
 # remove guest user - make sure you deleted all guest user before
-if ( ! grep -q "fw.max_users=1" /system/build.prop );
+if (grep -q "fw.max_users=1" /system/build.prop );
         then
         echo "max users already set"
         exit 1;
