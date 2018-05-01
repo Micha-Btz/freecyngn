@@ -30,8 +30,8 @@ $IP6TABLES -P FORWARD DROP
 $IP6TABLES -P OUTPUT DROP
 
 # DNS Server Chaos Computer Club except for wifi home use dnsmasq from freetz
-$IPTABLES -t nat -I OUTPUT ! -s 192.168.2.0/24 -p tcp --dport 53 -j DNAT --to-destination 213.73.91.35:53
-$IPTABLES -t nat -I OUTPUT ! -s 192.168.2.0/24 -p udp --dport 53 -j DNAT --to-destination 213.73.91.35:53
+$IPTABLES -t nat -I OUTPUT ! -s 192.168.2.0/24 -p tcp --dport 53 -j DNAT --to-destination 91.239.100.100:53
+$IPTABLES -t nat -I OUTPUT ! -s 192.168.2.0/24 -p udp --dport 53 -j DNAT --to-destination 91.239.100.100:53
 
 # Force a specific NTP (ntp0.fau.de), Location: University Erlangen-Nuernberg
 $IPTABLES -t nat -A OUTPUT -p tcp --dport 123 -j DNAT --to-destination 131.188.3.222:123
