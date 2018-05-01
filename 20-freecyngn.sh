@@ -19,6 +19,7 @@ CyanogenSetupWizard
 Email
 Exchange2
 HoloSpiralWallpaper
+Jelly
 LineageSetupWizard
 LivePicker
 LiveWallpapers
@@ -27,6 +28,7 @@ NoiseField
 PhaseBeam
 PhotoPhase
 PhotoTable
+Snap
 VisualizationWallpapers
 Updater
 EOF
