@@ -38,3 +38,5 @@ $IPTABLES -t nat -A OUTPUT -p tcp --dport 123 -j DNAT --to-destination 131.188.3
 $IPTABLES -t nat -A OUTPUT -p udp --dport 123 -j DNAT --to-destination 131.188.3.222:123
 # Allow SSH from desktop
 $IPTABLES -A INPUT -p tcp --dport 22 -s 192.168.2.105 -j ACCEPT
+#dietpi
+$IPTABLES -A OUTPUT -d 192.168.2.107 -j ACCEPT
