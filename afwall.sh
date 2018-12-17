@@ -69,5 +69,12 @@ $IPTABLES -A INPUT -p tcp --dport 22 -s 192.168.2.105 -j ACCEPT
 #dietpi
 $IPTABLES -A OUTPUT -d 192.168.2.107 -j ACCEPT
 #yeelight multi cast address
-#$IPTABLES -A OUTPUT -d 192.168.2.150 -j ACCEPT
-#$IPTABLES -A OUTPUT -d  239.255.255.250:1982  -j ACCEPT
+#i#$IPTABLES -A OUTPUT -d 192.168.2.150 -j ACCEPT
+#export CHROMECAST_IP=192.168.2.150 # Adjust to the Chromecast IP in your local network
+#iptables -A INPUT -s ${CHROMECAST_IP}/32 -p udp -m multiport --sports 32768:61000 -m multiport --dports 32768:61000 -m comment --comment "Allow Chromecast UDP data (inbound)" -j ACCEPT
+#iptables -A OUTPUT -d ${CHROMECAST_IP}/32 -p udp -m multiport --sports 32768:61000 -m multiport --dports 32768:61000 -m comment --comment "Allow Chromecast UDP data (outbound)" -j ACCEPT
+#iptables -A OUTPUT -d ${CHROMECAST_IP}/32 -p tcp -m multiport --dports 8008:8009 -m comment --comment "Allow Chromecast TCP data (outbound)" -j ACCEPT
+#iptables -A OUTPUT -d 239.255.255.250/32 -p udp --dport 1982 -m comment --comment "Allow Chromecast SSDP" -j ACCEPT
+#iptables -A INPUT -d 239.255.255.250/32 -p udp --dport 1982 -m comment --comment "Allow Chromecast SSDP" -j ACCEPT
+#iptables -I INPUT -p udp -m udp --dport 32768:61000 -j ACCEPT
+#$IPTABLES -A INPUT -s 192.168.2.150 -j ACCEPT
