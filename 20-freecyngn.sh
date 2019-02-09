@@ -1,6 +1,6 @@
 #!/sbin/sh
 # /system/addon.d/20-freecyngn.sh
-# During a CyanogenMod upgrade this script repatches CyanogenMod
+# During a LineageOS upgrade this script repatches the rom
 # using the freecyngn patchset.
 #
 
@@ -11,26 +11,24 @@ deleteApk() {
 del_files() {
 cat <<EOF
 BasicDreams
-privacy-browser
 CaptivePortalLogin
-CMFileManager
-CMWallpapers
-CyanogenSetupWizard
 Email
 Exchange2
-HoloSpiralWallpaper
+Gallery2
 Jelly
-LineageSetupWizard
-LivePicker
-LiveWallpapers
+LineageBlackAccent
+LineageBlackTheme
+LineageBlueAccent
+LineageBrownAccent
+LineageCyanAccent
+LineageDarkTheme
+LineageGreenAccent
+LineageOrangeAccent
+LineagePinkAccent
+LineagePurpleAccent
+LineageRedAccent
+LineageYellowAccent
 LiveWallpapersPicker
-NoiseField
-PhaseBeam
-PhotoPhase
-PhotoTable
-Snap
-VisualizationWallpapers
-Updater
 EOF
 }
 
