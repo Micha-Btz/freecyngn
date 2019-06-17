@@ -7,4 +7,4 @@ settings put global captive_portal_server localhost
 settings put global captive_portal_mode 0
 
 # Disable Global NTP Server
-settings put global ntp_server 127.0.0.1
+settings put global ntp_server 131.188.3.222
